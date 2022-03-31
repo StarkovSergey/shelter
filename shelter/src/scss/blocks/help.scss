@@ -1,0 +1,27 @@
+.help {
+}
+
+.help__title {
+  margin-bottom: 60px;
+}
+
+.help__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 55px;
+  margin: 0;
+  margin: 0 auto;
+  padding: 0 40px;
+  column-gap: 6%;
+  list-style: none;
+}
+
+.help__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 170px;
+  height: 113px;
+}

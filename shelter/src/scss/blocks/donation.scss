@@ -1,0 +1,58 @@
+.donation {
+}
+
+.donation__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.donation__image {
+  width: 505px;
+}
+
+.donation__column {
+  max-width: 380px;
+}
+
+.donation__title {
+  margin-bottom: 20px;
+}
+
+.donation__bank-text {
+  color: var(--color-dark-l);
+  font-family: "Georgia", serif;
+  text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+}
+
+.donation__card-number {
+  position: relative;
+  display: block;
+  justify-content: space-between;
+  width: 349px;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  padding-left: 55px;
+  border-radius: 9px;
+  font-family: "Georgia", serif;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  background-color: var(--color-primary);
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    width: 30px;
+    height: 23px;
+    background-image: url("../img/sections/donation/credit-card.svg");
+  }
+}
+
+.donation__legal-information {
+  margin: 0;
+  color: var(--color-dark-m);
+  font-style: italic;
+}

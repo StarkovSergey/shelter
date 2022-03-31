@@ -1,0 +1,19 @@
+.friends {
+}
+
+.friends__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.friends__title {
+  max-width: 410px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+
+.friends__slider {
+  width: 100%;
+  margin-bottom: 60px;
+}

@@ -1,0 +1,32 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+// .navigation__logo {
+// }
+
+.navigation__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  list-style: none;
+
+  @media (max-width: $tablet-width) {
+    flex-direction: column;
+  }
+}
+
+// .navigation__item {
+// }
+
+.navigation__link {
+  display: block;
+  color: var(--color-dark-s);
+  font-size: var(--fz-nav-link);
+  line-height: var(--lh-nav-link);
+
+  &--active {
+    border-bottom: 3px solid var(--color-primary);
+  }
+}
