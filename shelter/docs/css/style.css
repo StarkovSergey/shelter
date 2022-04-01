@@ -412,8 +412,8 @@ a {
 
 .page__body {
   display: grid;
-  grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
-  grid-template-rows: min-content 1fr min-content;
+  grid-template-rows: 1fr -webkit-min-content;
+  grid-template-rows: 1fr min-content;
   min-height: 100%;
   margin: 0;
   color: var(--color-dark-xl);
@@ -466,24 +466,6 @@ button {
   .container {
     max-width: 768px;
     padding: 0 64px;
-  }
-}
-@media (max-width: 600px) {
-  .container {
-    padding: 0 20px;
-  }
-}
-
-.logo {
-  width: 100px;
-  height: 100px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 50%;
-}
-@media (max-width: 450px) {
-  .logo {
-    display: none;
   }
 }
 
@@ -580,9 +562,17 @@ button {
   color: var(--color-dark-s);
   font-size: var(--fz-nav-link);
   line-height: var(--lh-nav-link);
+  transition: opacity 200ms ease 0s;
+}
+.navigation__link:hover, .navigation__link:focus {
+  opacity: 0.7;
 }
 .navigation__link--active {
   border-bottom: 3px solid var(--color-primary);
+}
+
+.header--light-bg .navigation__link {
+  color: var(--color-dark-l);
 }
 
 .hero {
@@ -666,28 +656,6 @@ button {
   list-style: none;
 }
 
-.slider__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 435px;
-  padding-bottom: 30px;
-}
-
-.slider__name {
-  margin: 0;
-  margin-bottom: 30px;
-  font-weight: 400;
-  text-align: center;
-}
-
-.slider__image {
-  order: -1;
-  width: 270px;
-  height: 270px;
-  margin-bottom: 30px;
-}
-
 .slider__controls {
   position: absolute;
   top: 50%;
@@ -712,6 +680,32 @@ button {
 }
 .slider__button:hover, .slider__button:focus {
   background-color: var(--color-primary);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 435px;
+  padding-bottom: 30px;
+  transition: box-shadow 200ms ease 0s;
+}
+.item:hover, .item:focus {
+  box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+
+.item__name {
+  margin: 0;
+  margin-bottom: 30px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.item__image {
+  order: -1;
+  width: 270px;
+  height: 270px;
+  margin-bottom: 30px;
 }
 
 .help__title {
@@ -779,6 +773,10 @@ button {
   line-height: 115%;
   letter-spacing: 0.06em;
   background-color: var(--color-primary);
+  transition: background-color 200ms ease 0s;
+}
+.donation__card-number:hover, .donation__card-number:focus {
+  background-color: var(--color-primary-light);
 }
 .donation__card-number::before {
   content: "";

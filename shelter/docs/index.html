@@ -10,7 +10,7 @@
   </head>
 
   <body class="page__body">
-    <header class="header">
+    <header class="header  @@headerModifier">
   <div class="container">
     <nav class="header__navigation  navigation">
       <a class="navigation__logo" href="index.html">
@@ -19,10 +19,10 @@
 
       <ul class="navigation__list">
         <li class="navigation__item">
-          <a href="#" class="navigation__link  navigation__link--active">About the shelter</a>
+          <a href="index.html" class="navigation__link  navigation__link--active">About the shelter</a>
         </li>
         <li class="navigation__item">
-          <a href="#" class="navigation__link">Our pets</a>
+          <a href="our-pets.html" class="navigation__link  @@modifierPetsLink">Our pets</a>
         </li>
         <li class="navigation__item">
           <a href="#" class="navigation__link">Help the shelter</a>
@@ -48,7 +48,7 @@
               extremely wide and open heart. He or she will love you more than
               anybody else in the world, you will see!
             </p>
-            <a class="button">Make a friend</a>
+            <a class="button" href="#friends">Make a friend</a>
           </div>
         </div>
       </section>
@@ -74,28 +74,28 @@
         </div>
       </section>
 
-      <section class="section  section--dark  friends">
+      <section class="section  section--dark  friends" id="friends">
         <div class="container  friends__container">
           <h2 class="section__title  section__title--center  friends__title">Our friends who<br> are looking for a house</h2>
           <div class="friends__slider  slider">
             <ul class="slider__list">
-              <li class="slider__item">
-                <h3 class="slider__name  section__main-text">Katrine</h3>
-                <div class="slider__image">
+              <li class="slider__item  item">
+                <h3 class="item__name  section__main-text">Katrine</h3>
+                <div class="item__image">
                   <img src="img/sections/friends/pets-katrine.png" alt="Katrine">
                 </div>
                 <button class="button  button--border">Learn more</button>
               </li>
               <li class="slider__item">
-                <h3 class="slider__name  section__main-text">Jennifer</h3>
-                <div class="slider__image">
+                <h3 class="item__name  section__main-text">Jennifer</h3>
+                <div class="item__image">
                   <img src="img/sections/friends/pets-jennifer.png" alt="Jennifer">
                 </div>
                 <button class="button  button--border">Learn more</button>
               </li>
               <li class="slider__item">
-                <h3 class="slider__name  section__main-text">Woody</h3>
-                <div class="slider__image">
+                <h3 class="item__name  section__main-text">Woody</h3>
+                <div class="item__image">
                   <img src="img/sections/friends/pets-woody.png" alt="Woody">
                 </div>
                 <button class="button  button--border">Learn more</button>

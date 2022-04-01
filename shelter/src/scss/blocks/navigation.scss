@@ -25,8 +25,20 @@
   color: var(--color-dark-s);
   font-size: var(--fz-nav-link);
   line-height: var(--lh-nav-link);
+  transition: opacity 200ms ease 0s;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
 
   &--active {
     border-bottom: 3px solid var(--color-primary);
+  }
+}
+
+.header--light-bg {
+  .navigation__link {
+    color: var(--color-dark-l);
   }
 }

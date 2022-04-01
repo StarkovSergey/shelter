@@ -40,6 +40,12 @@
   line-height: 115%;
   letter-spacing: 0.06em;
   background-color: var(--color-primary);
+  transition: background-color 200ms ease 0s;
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-primary-light);
+  }
 
   &::before {
     content: "";
