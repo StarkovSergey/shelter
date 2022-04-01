@@ -3,4 +3,12 @@
   width: 100%;
   padding-top: 60px;
   padding-bottom: 60px;
+
+
+  &--pets {
+    position: fixed;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: var(--color-light-xl);
+  }
 }

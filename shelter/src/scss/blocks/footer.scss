@@ -5,17 +5,23 @@
     #513d2f 0%,
     #1a1a1c 100%
   );
+}
 
-  .footer__container {
-    display: flex;
-    justify-content: space-between;
-  }
+.footer__questions-section {
+  max-width: 280px;
+  padding: 0;
+  padding-top: 16px;
+}
 
-  .section {
-    width: 300px;
-    padding: 0;
-    padding-top: 16px;
-  }
+.footer__contacts-section {
+  max-width: 300px;
+  padding: 0;
+  padding-top: 16px;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .footer__title {
@@ -27,8 +33,6 @@
   display: flex;
   align-items: center;
   color: var(--color-primary);
-  font-size: var(--fz-main-text);
-  line-height: var(--lh-main-text);
 
   svg {
     flex-shrink: 0;

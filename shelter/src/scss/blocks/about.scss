@@ -5,6 +5,10 @@
   display: flex;
 }
 
+.about__title {
+  margin-bottom: 25px;
+}
+
 .about__column {
   flex-basis: 50%;
 }
@@ -13,7 +17,7 @@
   position: relative;
   width: 300px;
   height: 408px;
-  margin: 0 auto;
+  margin-left: 175px;
 
   img {
     position: absolute;
@@ -27,4 +31,5 @@
 
 .about__text-column {
   width: 430px;
+  padding-top: 14px;
 }

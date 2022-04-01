@@ -26,8 +26,14 @@
 }
 
 .section__text {
+  margin: 0;
+  font-family: "Arial", "Helvetica Neue", "Helvetica", sans-serif;
   font-size: var(--fz-section-text);
   line-height: var(--lh-section-text);
+}
+
+.section__text + .section__text {
+  margin-top: 25px;
 }
 
 .strong-text {
@@ -38,6 +44,8 @@
 .section__main-text {
   margin: 0;
   font-weight: 400;
+  font-family: "Georgia", serif;
   font-size: var(--fz-main-text);
   line-height: var(--lh-main-text);
+  letter-spacing: 0.06em;
 }

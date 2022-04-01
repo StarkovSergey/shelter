@@ -1,15 +1,15 @@
-.donation {
-}
+// .donation {
+// }
 
 .donation__container {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 30px;
 }
 
 .donation__image {
   width: 505px;
+  margin-top: 11px;
 }
 
 .donation__column {
@@ -21,8 +21,13 @@
 }
 
 .donation__bank-text {
+  margin: 0;
+  margin-bottom: 20px;
   color: var(--color-dark-l);
   font-family: "Georgia", serif;
+  font-size: 15px;
+  line-height: 17px;
+  letter-spacing: 0.06em;
   text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
 }
 
@@ -33,7 +38,7 @@
   width: 349px;
   margin-bottom: 20px;
   padding: 10px 15px;
-  padding-left: 55px;
+  padding-left: 59px;
   border-radius: 9px;
   font-family: "Georgia", serif;
   font-size: 20px;
@@ -61,4 +66,6 @@
   margin: 0;
   color: var(--color-dark-m);
   font-style: italic;
+  font-size: 12px;
+  line-height: 18px;
 }

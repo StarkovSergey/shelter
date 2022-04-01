@@ -1,0 +1,35 @@
+.pagination {
+  display: flex;
+  gap: 20px;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+.pagination__element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+
+  &:disabled {
+    border-color: var(--color-dark-s);
+    color: var(--color-dark-s);
+    cursor: initial;
+  }
+
+  &:hover:not(&:disabled),
+  &:focus:not(&:disabled) {
+    background-color: var(--color-primary);
+  }
+
+  &--page {
+    background-color: var(--color-primary);
+  }
+
+  &--next {
+    transition: background-color 200ms ease 0s;
+  }
+}
