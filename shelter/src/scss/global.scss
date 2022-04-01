@@ -62,9 +62,13 @@ button {
   margin: 0 auto;
   padding: 0 40px;
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: $laptop-width) {
     max-width: 768px;
-    padding: 0 64px;
+    padding: 0 30px;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding: 0 10px;
   }
 }
 

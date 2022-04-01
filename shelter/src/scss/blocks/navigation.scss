@@ -1,6 +1,7 @@
 .navigation {
   display: flex;
   justify-content: space-between;
+
 }
 
 // .navigation__logo {
@@ -13,6 +14,7 @@
   list-style: none;
 
   @media (max-width: $tablet-width) {
+    display: none;
     flex-direction: column;
   }
 }
@@ -40,5 +42,13 @@
 .header--pets {
   .navigation__link {
     color: var(--color-dark-l);
+  }
+}
+
+.navigation__toggle {
+  display: none;
+
+  @media (max-width: $laptop-width) {
+    display: block;
   }
 }
