@@ -3,6 +3,14 @@
   padding-top: 180px;
   padding-bottom: 0;
   background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+
+  @media (max-width: $laptop-width) {
+    padding-top: 120px;
+  }
+
+  @media (max-width: $tablet-width) {
+    min-height: 823px;
+  }
 }
 
 .hero__container {
@@ -16,12 +24,16 @@
 }
 
 .hero__column {
-  width: 460px;
+  max-width: 460px;
   margin-top: 163px;
 
   @media (max-width: $laptop-width) {
-    margin-top: 0;
+    margin-top: 60px;
     margin-bottom: 100px;
+  }
+
+  @media (max-width: $tablet-width) {
+    text-align: center;
   }
 }
 
@@ -38,10 +50,22 @@
   color: var(--color-dark-s);
 }
 
+.hero__button {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
 .hero__image {
   @media (max-width: $laptop-width) {
     align-self: end;
     width: 569px;
     height: 593px;
+  }
+
+  @media (max-width: $tablet-width) {
+    align-self: end;
+    width: 260px;
+    height: 272px;
   }
 }

@@ -10,4 +10,9 @@
     padding-bottom: 30px;
     background-color: var(--color-light-xl);
   }
+
+  @media (max-width: $laptop-width) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 }

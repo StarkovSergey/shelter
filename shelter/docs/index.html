@@ -32,7 +32,9 @@
         </li>
       </ul>
 
-      <button class="navigation__toggle"></button>
+      <button class="navigation__toggle" aria-label="toggle menu">
+        <span class="navigation__toggle-line"></span>
+      </button>
     </nav>
   </div>
 </header>
@@ -53,7 +55,7 @@
               extremely wide and open heart. He or she will love you more than
               anybody else in the world, you will see!
             </p>
-            <a class="button" href="#friends">Make a friend</a>
+            <a class="button  hero__button" href="#friends">Make a friend</a>
           </div>
           <div class="hero__image">
             <picture>
@@ -115,7 +117,7 @@
         </div>
       </section>
 
-      <section class="section section--dark friends" id="friends">
+      <section class="section section--dark friends" id="friends" style="display: none">
         <div class="container friends__container">
           <h2 class="section__title section__title--center friends__title">
             Our friends who<br />
@@ -177,7 +179,7 @@
         </div>
       </section>
 
-      <section class="section help" id="help">
+      <section class="section help" id="help" style="display: none">
         <div class="container">
           <h2 class="section__title section__title--center help__title">
             How you can help<br />
@@ -243,7 +245,7 @@
         </div>
       </section>
 
-      <section class="section section--dark donation">
+      <section class="section section--dark donation" style="display: none">
         <div class="container donation__container">
           <div class="donation__image">
             <img
@@ -274,41 +276,7 @@
         </div>
       </section>
     </main>
-    <footer class="footer" id="footer">
-  <div class="footer__container container">
-    <section class="section  footer__questions-section">
-      <h2 class="section__title  section__title--light  footer__title">For questions and suggestions</h2>
-      <a class="footer__link  section__main-text" href="mailto:email@shelter.com">
-        <svg width="40" height="32">
-          <use xlink:href="../img/icons/sprite.svg#mail"></use>
-        </svg>
-        email@shelter.com
-      </a>
-      <a class="footer__link  section__main-text" href="tel:+136745677554">
-        <svg width="40" height="32">
-          <use xlink:href="../img/icons/sprite.svg#phone"></use>
-        </svg>
-        +13 674 567 75 54</a>
-    </section>
-    <section class="section  footer__contacts-section">
-      <h2 class="section__title  section__title--light  footer__title">We are waiting for your visit</h2>
-      <a class="footer__link  footer__link--pin  section__main-text" target="_blank" href="https://goo.gl/maps/4GrrCSCn8fDpwnhT7">
-        <svg width="22" height="32">
-          <use xlink:href="../img/icons/sprite.svg#pin"></use>
-        </svg>
-        1 Central Street, Boston (entrance from the store)</a>
-      <a class="footer__link  footer__link--pin  section__main-text" target="_blank" href="https://goo.gl/maps/4GrrCSCn8fDpwnhT7">
-        <svg width="22" height="32">
-          <use xlink:href="../img/icons/sprite.svg#pin"></use>
-        </svg>
-        18 South Park, London </a>
-    </section>
-    <div class="footer__image">
-      <img src="img/sections/footer/footer-puppy.png" alt="one more puppy" width="300" height="310px">
-    </div>
-  </div>
-</footer>
-
+    
     <script src="js/app.min.js" type="module"></script>
   </body>
 </html>
