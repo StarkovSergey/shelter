@@ -3,6 +3,16 @@
 
 .about__row {
   display: flex;
+
+  @media (max-width: $laptop-width) {
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+  }
+
+  @media (max-width: $tablet-width) {
+    gap: 42px;
+  }
 }
 
 .about__title {
@@ -11,6 +21,12 @@
 
 .about__column {
   flex-basis: 50%;
+
+  &--image {
+    @media (max-width: $laptop-width) {
+      order: 1;
+    }
+  }
 }
 
 .about__image-box {
@@ -27,9 +43,13 @@
     height: 100%;
     object-fit: cover;
   }
+
+  @media (max-width: $laptop-width) {
+    margin-left: 0;
+  }
 }
 
 .about__text-column {
-  width: 430px;
+  max-width: 430px;
   padding-top: 14px;
 }

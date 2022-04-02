@@ -7,21 +7,37 @@
   );
 }
 
-.footer__questions-section {
-  max-width: 280px;
-  padding: 0;
-  padding-top: 16px;
-}
-
-.footer__contacts-section {
-  max-width: 300px;
-  padding: 0;
-  padding-top: 16px;
-}
-
 .footer__container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 279px 300px 300px;
   justify-content: space-between;
+
+  @media (max-width: $laptop-width) {
+    grid-template-columns: 279px 300px;
+    justify-content: center;
+    row-gap: 65px;
+    column-gap: 60px;
+  }
+
+  @media (max-width: $tablet-width) {
+    grid-template-columns: 300px;
+  }
+}
+
+.footer__image {
+  @media (max-width: $laptop-width) {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  @media (max-width: $laptop-width) {
+    max-width: 260px;
+  }
+}
+
+.footer__section {
+  padding: 0;
+  padding-top: 16px;
 }
 
 .footer__title {

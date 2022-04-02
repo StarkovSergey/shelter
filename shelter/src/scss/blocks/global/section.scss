@@ -5,6 +5,11 @@
   &--dark {
     background-color: var(--color-light-l);
   }
+
+  @media (max-width: $tablet-width) {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
 }
 
 .section__title {
@@ -22,6 +27,10 @@
 
   &--light {
     color: var(--color-light-xl);
+  }
+
+  @media (max-width: $tablet-width) {
+    text-align: center;
   }
 }
 
@@ -48,4 +57,6 @@
   font-size: var(--fz-main-text);
   line-height: var(--lh-main-text);
   letter-spacing: 0.06em;
+
+  
 }

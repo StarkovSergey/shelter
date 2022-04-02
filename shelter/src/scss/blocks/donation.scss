@@ -5,11 +5,22 @@
   display: flex;
   justify-content: center;
   gap: 30px;
+
+  @media (max-width: $laptop-width) {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
 }
 
 .donation__image {
+  order: 1;
   width: 505px;
   margin-top: 11px;
+
+  @media (max-width: $tablet-width) {
+    width: 260px;
+  }
 }
 
 .donation__column {
@@ -29,6 +40,11 @@
   line-height: 17px;
   letter-spacing: 0.06em;
   text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+
+  @media (max-width: $tablet-width) {
+    letter-spacing: 0;
+    text-align: center;
+  }
 }
 
 .donation__card-number {
@@ -60,6 +76,14 @@
     height: 23px;
     background-image: url("../img/sections/donation/credit-card.svg");
   }
+
+  @media (max-width: $tablet-width) {
+    width: 281px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 15px;
+    line-height: 17px;
+  }
 }
 
 .donation__legal-information {
@@ -68,4 +92,9 @@
   font-style: italic;
   font-size: 12px;
   line-height: 18px;
+
+  @media (max-width: $tablet-width) {
+    padding: 0 10px;
+    text-align: justify;
+  }
 }

@@ -4,15 +4,35 @@
 
 .slider__list {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 90px;
   max-width: 990px;
   margin: 0 auto;
   padding: 0;
   list-style: none;
+
+  @media (max-width: $laptop-width) {
+    gap: 40px;
+  }
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 20px;
+  }
 }
 
-// .slider__item {
-// }
+.slider__item {
+  @media (max-width: $laptop-width) {
+    &:nth-child(3) {
+      display: none;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    &:nth-child(1) {
+      display: none;
+    }
+  }
+}
 
 .slider__controls {
   position: absolute;
@@ -21,6 +41,13 @@
   justify-content: space-between;
   width: 100%;
   transform: translateY(-50%);
+
+  @media (max-width: $tablet-width) {
+    position: static;
+    transform: translateY(0);
+    width: 184px;
+    margin: 0 auto;
+  }
 }
 
 .slider__button {

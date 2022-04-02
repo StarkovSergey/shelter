@@ -38,6 +38,7 @@
     top: 0;
     right: 0;
     bottom: 0;
+    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,6 +89,7 @@
 
 .navigation__toggle {
   position: relative;
+  z-index: 2;
   display: none;
   flex-shrink: 0;
   width: 30px;
