@@ -12,6 +12,8 @@
 
   @media (max-width: $tablet-width) {
     gap: 42px;
+    padding: 0 15px;
+    text-align: justify;
   }
 }
 
@@ -25,6 +27,12 @@
   &--image {
     @media (max-width: $laptop-width) {
       order: 1;
+    }
+  }
+
+  &--text {
+    @media (min-width: $desktop-width-only) {
+      margin-left: -5px;
     }
   }
 }
@@ -47,9 +55,16 @@
   @media (max-width: $laptop-width) {
     margin-left: 0;
   }
+
+  @media (max-width: $tablet-width) {
+    width: 260px;
+    height: 353px;
+  }
 }
 
 .about__text-column {
+  @media (min-width: $desktop-width-only) {
+    padding-top: 14px;
+  }
   max-width: 430px;
-  padding-top: 14px;
 }

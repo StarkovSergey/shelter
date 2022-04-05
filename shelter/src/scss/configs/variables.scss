@@ -19,13 +19,16 @@
   --lh-section-text: 24px;
   --fz-section-title: 35px;
   --lh-section-title: 45px;
+  --fz-slider-title: 20px;
+  --lh-slider-title: 23px;
   --fz-button: 17px;
   --lh-button: 22px;
   --fz-main-text: 20px;
   --lh-main-text: 23px;
 }
 
-$laptop-width: 1280px;
+$desktop-width-only: 1280px;
+$laptop-width: 1279px;
 $tablet-width: 768px;
 
 @media (max-width: $tablet-width) {

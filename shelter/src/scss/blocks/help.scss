@@ -3,6 +3,10 @@
 
 .help__title {
   margin-bottom: 60px;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 42px;
+  }
 }
 
 .help__list {
@@ -12,11 +16,17 @@
   row-gap: 55px;
   margin: 0;
   margin: 0 auto;
-  padding: 0 40px;
-  column-gap: 6%;
+  padding: 0 39px;
+  column-gap: 120px;
   list-style: none;
 
+  @media (max-width: $laptop-width) {
+    row-gap: 55px;
+    column-gap: 60px;
+  }
+
   @media (max-width: $tablet-width) {
+    justify-content: start;
     gap: 30px;
     max-width: 290px;
     padding: 0;
@@ -28,12 +38,15 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 170px;
   height: 113px;
 
   svg {
     width: 60px;
     height: 60px;
+  }
+
+  @media (max-width: $laptop-width) {
+    width: 170px;
   }
 
   @media (max-width: $tablet-width) {

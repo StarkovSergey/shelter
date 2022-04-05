@@ -11,12 +11,20 @@
     align-items: center;
     gap: 60px;
   }
+
+  @media (max-width: $tablet-width) {
+    gap: 42px;
+  }
 }
 
 .donation__image {
-  order: 1;
   width: 505px;
   margin-top: 11px;
+
+  @media (max-width: $laptop-width) {
+    order: 1;
+    margin-top: 0;
+  }
 
   @media (max-width: $tablet-width) {
     width: 260px;
@@ -45,20 +53,25 @@
     letter-spacing: 0;
     text-align: center;
   }
+
+  @media (max-width: $tablet-width) {
+    line-height: 24px;
+  }
 }
 
 .donation__card-number {
   position: relative;
-  display: block;
-  justify-content: space-between;
+  display: flex;
+  align-items: center;
   width: 349px;
+  min-height: 43px;
   margin-bottom: 20px;
   padding: 10px 15px;
   padding-left: 59px;
   border-radius: 9px;
   font-family: "Georgia", serif;
   font-size: 20px;
-  line-height: 115%;
+  line-height: 23px;
   letter-spacing: 0.06em;
   background-color: var(--color-primary);
   transition: background-color 200ms ease 0s;

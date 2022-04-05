@@ -11,6 +11,10 @@
   max-width: 410px;
   margin: 0 auto;
   margin-bottom: 60px;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 42px;
+  }
 }
 
 .friends__slider {

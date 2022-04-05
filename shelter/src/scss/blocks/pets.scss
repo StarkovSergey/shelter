@@ -10,9 +10,29 @@
 .pets__list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
   row-gap: 30px;
   margin: 0;
   margin-bottom: 45px;
-  padding: 13px 0;
+  padding: 15px 0;
   column-gap: 40px;
+
+  @media (max-width: $laptop-width) {
+    grid-template-columns: 1fr 1fr;
+
+    .item:nth-child(7),
+    .item:nth-child(8) {
+      display: none;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    grid-template-columns: 1fr;
+
+    .item:nth-child(4),
+    .item:nth-child(5),
+    .item:nth-child(6) {
+      display: none;
+    }
+  }
 }
