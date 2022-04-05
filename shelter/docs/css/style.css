@@ -621,34 +621,44 @@ button {
 }
 @media (max-width: 768px) {
   .navigation__list {
-    display: none;
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 768px) {
-  .navigation--open .navigation__list {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     z-index: 1;
-    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: transform 0.2s ease, visibility 0ms 200ms;
+  }
+}
+
+@media (max-width: 768px) {
+  .navigation--open .navigation__list {
     width: 320px;
     height: 100vh;
     margin: 0;
     padding: 0;
     background-color: var(--color-dark-3xl);
+    visibility: visible;
+    transform: translateX(0%);
+    transition: transform 0.2s ease, visibility 0ms 0ms;
   }
   .navigation--open .navigation__list::before {
     position: absolute;
     right: 320px;
-    left: -100vw;
-    height: 100vh;
+    left: -200vw;
+    height: 106vh;
     background-color: var(--color-dark-3xl-a60);
     content: "";
+  }
+}
+
+@media (max-width: 768px) {
+  .header--pets .navigation__list {
+    background-color: var(--color-light-xl);
   }
 }
 
