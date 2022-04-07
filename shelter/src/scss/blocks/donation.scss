@@ -1,3 +1,5 @@
+@use "../configs/variables.scss";
+
 // .donation {
 // }
 
@@ -6,13 +8,13 @@
   justify-content: center;
   gap: 30px;
 
-  @media (max-width: $laptop-width) {
+  @media (max-width: variables.$laptop-width) {
     flex-direction: column;
     align-items: center;
     gap: 60px;
   }
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: variables.$tablet-width) {
     gap: 42px;
   }
 }
@@ -21,12 +23,12 @@
   width: 505px;
   margin-top: 11px;
 
-  @media (max-width: $laptop-width) {
+  @media (max-width: variables.$laptop-width) {
     order: 1;
     margin-top: 0;
   }
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: variables.$tablet-width) {
     width: 260px;
   }
 }
@@ -49,12 +51,12 @@
   letter-spacing: 0.06em;
   text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: variables.$tablet-width) {
     letter-spacing: 0;
     text-align: center;
   }
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: variables.$tablet-width) {
     line-height: 24px;
   }
 }
@@ -90,7 +92,7 @@
     background-image: url("../img/sections/donation/credit-card.svg");
   }
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: variables.$tablet-width) {
     width: 281px;
     margin-right: auto;
     margin-left: auto;
@@ -106,7 +108,7 @@
   font-size: 12px;
   line-height: 18px;
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: variables.$tablet-width) {
     padding: 0 10px;
     text-align: justify;
   }

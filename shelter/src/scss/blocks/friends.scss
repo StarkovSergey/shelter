@@ -1,3 +1,5 @@
+@use "../configs/variables.scss";
+
 // .friends {
 // }
 
@@ -12,7 +14,7 @@
   margin: 0 auto;
   margin-bottom: 60px;
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: variables.$tablet-width) {
     margin-bottom: 42px;
   }
 }
@@ -21,7 +23,7 @@
   width: 100%;
   margin-bottom: 60px;
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: variables.$tablet-width) {
     margin-bottom: 42px;
   }
 }

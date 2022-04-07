@@ -1,3 +1,5 @@
+@use "../../configs/variables.scss";
+
 .section {
   padding-top: 80px;
   padding-bottom: 100px;
@@ -6,7 +8,7 @@
     background-color: var(--color-light-l);
   }
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: variables.$tablet-width) {
     padding-top: 42px;
     padding-bottom: 42px;
   }
@@ -29,7 +31,7 @@
     color: var(--color-light-xl);
   }
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: variables.$tablet-width) {
     text-align: center;
   }
 }
@@ -39,13 +41,12 @@
   font-family: "Arial", "Helvetica Neue", "Helvetica", sans-serif;
   font-size: var(--fz-section-text);
   line-height: var(--lh-section-text);
-
 }
 
 .section__text + .section__text {
   margin-top: 25px;
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: variables.$tablet-width) {
     margin-top: 22px;
   }
 }

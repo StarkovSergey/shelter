@@ -503,7 +503,7 @@ button {
   text-align: center;
   background-color: var(--color-primary);
   cursor: pointer;
-  transition: background-color 200ms ease 0s;
+  transition: background-color 200ms ease 0s, border-color 200ms ease 0s;
 }
 .button:hover, .button:focus {
   border-color: var(--color-primary-light);
@@ -597,6 +597,122 @@ button {
   }
 }
 
+.donation__container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+@media (max-width: 1279px) {
+  .donation__container {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+}
+@media (max-width: 768px) {
+  .donation__container {
+    gap: 42px;
+  }
+}
+
+.donation__image {
+  width: 505px;
+  margin-top: 11px;
+}
+@media (max-width: 1279px) {
+  .donation__image {
+    order: 1;
+    margin-top: 0;
+  }
+}
+@media (max-width: 768px) {
+  .donation__image {
+    width: 260px;
+  }
+}
+
+.donation__column {
+  max-width: 380px;
+}
+
+.donation__title {
+  margin-bottom: 20px;
+}
+
+.donation__bank-text {
+  margin: 0;
+  margin-bottom: 20px;
+  color: var(--color-dark-l);
+  font-family: "Georgia", serif;
+  font-size: 15px;
+  line-height: 17px;
+  letter-spacing: 0.06em;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+@media (max-width: 768px) {
+  .donation__bank-text {
+    letter-spacing: 0;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .donation__bank-text {
+    line-height: 24px;
+  }
+}
+
+.donation__card-number {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 349px;
+  min-height: 43px;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  padding-left: 59px;
+  border-radius: 9px;
+  font-family: "Georgia", serif;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  background-color: var(--color-primary);
+  transition: background-color 200ms ease 0s;
+}
+.donation__card-number:hover, .donation__card-number:focus {
+  background-color: var(--color-primary-light);
+}
+.donation__card-number::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  width: 30px;
+  height: 23px;
+  background-image: url("../img/sections/donation/credit-card.svg");
+}
+@media (max-width: 768px) {
+  .donation__card-number {
+    width: 281px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 15px;
+    line-height: 17px;
+  }
+}
+
+.donation__legal-information {
+  margin: 0;
+  color: var(--color-dark-m);
+  font-style: italic;
+  font-size: 12px;
+  line-height: 18px;
+}
+@media (max-width: 768px) {
+  .donation__legal-information {
+    padding: 0 10px;
+    text-align: justify;
+  }
+}
+
 .navigation {
   display: flex;
   justify-content: space-between;
@@ -632,7 +748,7 @@ button {
     top: 0;
     right: 0;
     bottom: 0;
-    z-index: 1;
+    z-index: 5;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -690,7 +806,7 @@ button {
 /* toggle */
 .navigation__toggle {
   position: relative;
-  z-index: 2;
+  z-index: 6;
   display: none;
   flex-shrink: 0;
   width: 30px;
@@ -988,7 +1104,7 @@ button {
   align-items: center;
   width: 52px;
   height: 52px;
-  border: 2px solid var(--color-primary);
+  border: 2px solid var(--color-primary-light);
   border-radius: 50%;
   transition: background-color 200ms ease 0s;
 }
@@ -996,10 +1112,11 @@ button {
   transform: rotate(180deg);
 }
 .slider__button:hover, .slider__button:focus {
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-light);
 }
 
 .item {
+  border-radius: 9px;
   background-color: var(--color-light-s);
   transition: box-shadow 200ms ease 0s;
 }
@@ -1007,7 +1124,8 @@ button {
   box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 .item:hover .button, .item:focus-within .button {
-  background-color: var(--color-primary);
+  border-color: var(--color-primary-light);
+  background-color: var(--color-primary-light);
 }
 
 .item__link {
@@ -1096,122 +1214,6 @@ button {
   .help__item svg {
     width: 50px;
     height: 50px;
-  }
-}
-
-.donation__container {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-@media (max-width: 1279px) {
-  .donation__container {
-    flex-direction: column;
-    align-items: center;
-    gap: 60px;
-  }
-}
-@media (max-width: 768px) {
-  .donation__container {
-    gap: 42px;
-  }
-}
-
-.donation__image {
-  width: 505px;
-  margin-top: 11px;
-}
-@media (max-width: 1279px) {
-  .donation__image {
-    order: 1;
-    margin-top: 0;
-  }
-}
-@media (max-width: 768px) {
-  .donation__image {
-    width: 260px;
-  }
-}
-
-.donation__column {
-  max-width: 380px;
-}
-
-.donation__title {
-  margin-bottom: 20px;
-}
-
-.donation__bank-text {
-  margin: 0;
-  margin-bottom: 20px;
-  color: var(--color-dark-l);
-  font-family: "Georgia", serif;
-  font-size: 15px;
-  line-height: 17px;
-  letter-spacing: 0.06em;
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-}
-@media (max-width: 768px) {
-  .donation__bank-text {
-    letter-spacing: 0;
-    text-align: center;
-  }
-}
-@media (max-width: 768px) {
-  .donation__bank-text {
-    line-height: 24px;
-  }
-}
-
-.donation__card-number {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 349px;
-  min-height: 43px;
-  margin-bottom: 20px;
-  padding: 10px 15px;
-  padding-left: 59px;
-  border-radius: 9px;
-  font-family: "Georgia", serif;
-  font-size: 20px;
-  line-height: 23px;
-  letter-spacing: 0.06em;
-  background-color: var(--color-primary);
-  transition: background-color 200ms ease 0s;
-}
-.donation__card-number:hover, .donation__card-number:focus {
-  background-color: var(--color-primary-light);
-}
-.donation__card-number::before {
-  content: "";
-  position: absolute;
-  left: 15px;
-  width: 30px;
-  height: 23px;
-  background-image: url("../img/sections/donation/credit-card.svg");
-}
-@media (max-width: 768px) {
-  .donation__card-number {
-    width: 281px;
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 15px;
-    line-height: 17px;
-  }
-}
-
-.donation__legal-information {
-  margin: 0;
-  color: var(--color-dark-m);
-  font-style: italic;
-  font-size: 12px;
-  line-height: 18px;
-}
-@media (max-width: 768px) {
-  .donation__legal-information {
-    padding: 0 10px;
-    text-align: justify;
   }
 }
 

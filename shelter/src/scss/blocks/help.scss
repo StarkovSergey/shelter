@@ -1,10 +1,12 @@
+@use "../configs/variables.scss";
+
 // .help {
 // }
 
 .help__title {
   margin-bottom: 60px;
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: variables.$tablet-width) {
     margin-bottom: 42px;
   }
 }
@@ -20,12 +22,12 @@
   column-gap: 120px;
   list-style: none;
 
-  @media (max-width: $laptop-width) {
+  @media (max-width: variables.$laptop-width) {
     row-gap: 55px;
     column-gap: 60px;
   }
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: variables.$tablet-width) {
     justify-content: start;
     gap: 30px;
     max-width: 290px;
@@ -45,11 +47,11 @@
     height: 60px;
   }
 
-  @media (max-width: $laptop-width) {
+  @media (max-width: variables.$laptop-width) {
     width: 170px;
   }
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: variables.$tablet-width) {
     width: 130px;
     height: 87px;
 

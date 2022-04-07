@@ -1,9 +1,10 @@
 {
-  "plugins": ["stylelint-order"],
+  "plugins": ["stylelint-order", "stylelint-scss"],
   "extends": "stylelint-config-standard-scss",
   "rules": {
     "no-invalid-double-slash-comments": null,
     "scss/at-import-partial-extension": "always",
+    "scss/at-rule-no-unknown": null,
     "color-no-invalid-hex": true,
     "font-family-no-duplicate-names": true,
     "function-calc-no-unspaced-operator": true,
@@ -22,7 +23,7 @@
     "selector-pseudo-element-no-unknown": true,
     "selector-type-no-unknown": true,
     "media-feature-name-no-unknown": true,
-    "at-rule-no-unknown": true,
+    "at-rule-no-unknown": null,
     "comment-no-empty": true,
     "no-empty-source": true,
     "no-extra-semicolons": true,

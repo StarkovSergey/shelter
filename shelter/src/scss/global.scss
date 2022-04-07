@@ -1,3 +1,5 @@
+@use "configs/variables.scss";
+
 *,
 *::before,
 *::after {
@@ -62,12 +64,12 @@ button {
   margin: 0 auto;
   padding: 0 40px;
 
-  @media (max-width: $laptop-width) {
+  @media (max-width: variables.$laptop-width) {
     max-width: 768px;
     padding: 0 30px;
   }
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: variables.$tablet-width) {
     padding: 0 10px;
   }
 }
@@ -85,7 +87,7 @@ button {
   text-align: center;
   background-color: var(--color-primary);
   cursor: pointer;
-  transition: background-color 200ms ease 0s;
+  transition: background-color 200ms ease 0s, border-color 200ms ease 0s;
 
   &:hover,
   &:focus {

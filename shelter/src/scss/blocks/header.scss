@@ -1,3 +1,5 @@
+@use "../configs/variables.scss";
+
 .header {
   position: absolute;
   width: 100%;
@@ -11,7 +13,7 @@
     background-color: var(--color-light-xl);
   }
 
-  @media (max-width: $laptop-width) {
+  @media (max-width: variables.$laptop-width) {
     padding-top: 30px;
     padding-bottom: 30px;
   }

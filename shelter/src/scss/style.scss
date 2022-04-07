@@ -1,23 +1,21 @@
-@import "configs/normalize.scss";
-@import "configs/fonts.scss";
-@import "configs/variables.scss";
+@use "configs/normalize.scss";
+@use "configs/fonts.scss";
+@use "global.scss";
 
-@import "global.scss";
-@import "blocks/global/section.scss";
+@use "blocks/global/section.scss";
+@use "blocks/header.scss";
+@use "blocks/donation.scss";
+@use "blocks/navigation.scss";
+@use "blocks/hero.scss";
+@use "blocks/about.scss";
+@use "blocks/friends.scss";
+@use "blocks/slider.scss";
+@use "blocks/item.scss";
+@use "blocks/help.scss";
 
-@import "blocks/header.scss";
-@import "blocks/navigation.scss";
-@import "blocks/hero.scss";
-@import "blocks/about.scss";
-@import "blocks/friends.scss";
-@import "blocks/slider.scss";
-@import "blocks/item.scss";
-@import "blocks/help.scss";
-@import "blocks/donation.scss";
+@use "blocks/pets.scss";
+@use "blocks/pagination.scss";
 
-@import "blocks/pets.scss";
-@import "blocks/pagination.scss";
+@use "blocks/modal.scss";
 
-@import "blocks/modal.scss";
-
-@import "blocks/footer.scss";
+@use "blocks/footer.scss";

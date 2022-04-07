@@ -1,9 +1,11 @@
+@use "../configs/variables.scss";
+
 .navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: variables.$tablet-width) {
     justify-content: end;
   }
 }
@@ -13,7 +15,7 @@
   z-index: 10;
   flex-shrink: 0;
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: variables.$tablet-width) {
     margin-right: 43px;
   }
 }
@@ -26,12 +28,12 @@
   gap: 36px;
   list-style: none;
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: variables.$tablet-width) {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
-    z-index: 1;
+    z-index: 5;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -44,7 +46,7 @@
 }
 
 .navigation--open .navigation__list {
-  @media (max-width: $tablet-width) {
+  @media (max-width: variables.$tablet-width) {
     width: 320px;
     height: 100vh;
     margin: 0;
@@ -66,7 +68,7 @@
 }
 
 .header--pets .navigation__list {
-  @media (max-width: $tablet-width) {
+  @media (max-width: variables.$tablet-width) {
     background-color: var(--color-light-xl);
   }
 }
@@ -101,14 +103,14 @@
 
 .navigation__toggle {
   position: relative;
-  z-index: 2;
+  z-index: 6;
   display: none;
   flex-shrink: 0;
   width: 30px;
   height: 30px;
   margin-right: 43px;
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: variables.$tablet-width) {
     display: block;
   }
 }
