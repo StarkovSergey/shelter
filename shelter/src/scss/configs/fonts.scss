@@ -5,8 +5,8 @@
   font-display: swap;
   src:
     local("Arial"),
-    url("../../fonts/arial-regular.woff2") format("woff2"),
-    url("../../fonts/arial-regular.ttf") format("ttf");
+    url("../fonts/arial-regular.woff2") format("woff2"),
+    url("../fonts/arial-regular.ttf") format("ttf");
 }
 
 @font-face {
@@ -16,6 +16,17 @@
   font-display: swap;
   src:
     local("Georgia"),
-    url("../../fonts/georgia-regular.woff2") format("woff2"),
-    url("../../fonts/georgia-regular.ttf") format("ttf");
+    url("../fonts/georgia-regular.woff2") format("woff2"),
+    url("../fonts/georgia-regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-weight: 700;
+  font-family: "Georgia";
+  font-style: normal;
+  font-display: swap;
+  src:
+    local("Georgia bold"),
+    url("../fonts/georgia-bold.woff2") format("woff2"),
+    url("../fonts/georgia-bold.ttf") format("ttf");
 }

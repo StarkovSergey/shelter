@@ -3,6 +3,8 @@
 }
 
 .slider__list {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: center;
   gap: 90px;
@@ -37,6 +39,7 @@
 .slider__controls {
   position: absolute;
   top: 50%;
+  z-index: 0;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -44,9 +47,9 @@
 
   @media (max-width: $tablet-width) {
     position: static;
-    transform: translateY(0);
     width: 184px;
     margin: 0 auto;
+    transform: translateY(0);
   }
 }
 

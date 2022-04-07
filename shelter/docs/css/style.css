@@ -352,14 +352,21 @@ template {
   font-family: "Arial";
   font-style: normal;
   font-display: swap;
-  src: local("Arial"), url("../../fonts/arial-regular.woff2") format("woff2"), url("../../fonts/arial-regular.ttf") format("ttf");
+  src: local("Arial"), url("../fonts/arial-regular.woff2") format("woff2"), url("../fonts/arial-regular.ttf") format("ttf");
 }
 @font-face {
   font-weight: 400;
   font-family: "Georgia";
   font-style: normal;
   font-display: swap;
-  src: local("Georgia"), url("../../fonts/georgia-regular.woff2") format("woff2"), url("../../fonts/georgia-regular.ttf") format("ttf");
+  src: local("Georgia"), url("../fonts/georgia-regular.woff2") format("woff2"), url("../fonts/georgia-regular.ttf") format("ttf");
+}
+@font-face {
+  font-weight: 700;
+  font-family: "Georgia";
+  font-style: normal;
+  font-display: swap;
+  src: local("Georgia bold"), url("../fonts/georgia-bold.woff2") format("woff2"), url("../fonts/georgia-bold.ttf") format("ttf");
 }
 :root {
   --color-dark-3xl: #292929;
@@ -764,11 +771,12 @@ button {
 @media (max-width: 1279px) {
   .hero__column {
     margin-top: 30px;
-    margin-bottom: 105px;
+    margin-bottom: 101px;
   }
 }
 @media (max-width: 768px) {
   .hero__column {
+    margin-bottom: 105px;
     text-align: center;
   }
 }
@@ -924,6 +932,8 @@ button {
 }
 
 .slider__list {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: center;
   gap: 90px;
@@ -957,6 +967,7 @@ button {
 .slider__controls {
   position: absolute;
   top: 50%;
+  z-index: 0;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -965,9 +976,9 @@ button {
 @media (max-width: 768px) {
   .slider__controls {
     position: static;
-    transform: translateY(0);
     width: 184px;
     margin: 0 auto;
+    transform: translateY(0);
   }
 }
 
@@ -989,17 +1000,23 @@ button {
 }
 
 .item {
+  background-color: var(--color-light-s);
+  transition: box-shadow 200ms ease 0s;
+}
+.item:hover, .item:focus-within {
+  box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+.item:hover .button, .item:focus-within .button {
+  background-color: var(--color-primary);
+}
+
+.item__link {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 270px;
   min-height: 435px;
   padding-bottom: 30px;
-  background-color: var(--color-light-s);
-  transition: box-shadow 200ms ease 0s;
-}
-.item:hover, .item:focus-within {
-  box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 
 .item__name {
@@ -1201,10 +1218,30 @@ button {
 .pets {
   margin-top: 120px;
 }
+@media (max-width: 1279px) {
+  .pets {
+    padding-bottom: 75px;
+  }
+}
+@media (max-width: 768px) {
+  .pets {
+    padding-bottom: 42px;
+  }
+}
 
 .pets__title {
   margin: 0;
   margin-bottom: 45px;
+}
+@media (max-width: 1279px) {
+  .pets__title {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .pets__title {
+    margin-bottom: 42px;
+  }
 }
 
 .pets__list {
@@ -1212,15 +1249,23 @@ button {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-items: center;
   row-gap: 30px;
-  margin: 0;
+  margin: 0 auto;
   margin-bottom: 45px;
-  padding: 15px 0;
+  padding: 0;
   -moz-column-gap: 40px;
        column-gap: 40px;
+  list-style: none;
+}
+@media (min-width: 1280px) {
+  .pets__list {
+    padding: 15px 0;
+  }
 }
 @media (max-width: 1279px) {
   .pets__list {
     grid-template-columns: 1fr 1fr;
+    max-width: 580px;
+    margin-bottom: 40px;
   }
   .pets__list .item:nth-child(7),
 .pets__list .item:nth-child(8) {
@@ -1230,6 +1275,7 @@ button {
 @media (max-width: 768px) {
   .pets__list {
     grid-template-columns: 1fr;
+    margin-bottom: 42px;
   }
   .pets__list .item:nth-child(4),
 .pets__list .item:nth-child(5),
@@ -1243,6 +1289,12 @@ button {
   gap: 20px;
   max-width: 340px;
   margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .pagination {
+    gap: 10px;
+    max-width: 300px;
+  }
 }
 
 .pagination__element {
@@ -1267,6 +1319,122 @@ button {
 }
 .pagination__element--next {
   transition: background-color 200ms ease 0s;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  background-color: var(--color-dark-3xl-a60);
+}
+
+.modal__box {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.modal__close-button {
+  position: absolute;
+  top: -52px;
+  right: -42px;
+  width: 52px;
+  height: 52px;
+  border: 2px solid var(--color-primary);
+  border-radius: 100px;
+  background-image: url("../img/sections/modal/cross.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 12px;
+  transition: background-color 200ms ease 0s;
+}
+.modal__close-button:hover, .modal__close-button:focus {
+  background-color: var(--color-primary);
+}
+
+.modal__content {
+  display: flex;
+  width: 900px;
+  min-height: 500px;
+  margin: 0 auto;
+  margin-top: 188px;
+  border-radius: 9px;
+  overflow: hidden;
+  background-color: var(--color-light-s);
+}
+
+.modal__image {
+  flex-shrink: 0;
+}
+
+.modal__text-column {
+  max-width: 350px;
+  margin-left: 30px;
+  padding-top: 50px;
+  font-family: "Georgia", serif;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 17px;
+  letter-spacing: 0.06em;
+}
+
+.modal__title {
+  margin: 0;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-family: "Georgia", serif;
+  font-size: 35px;
+  line-height: 45px;
+  letter-spacing: 0.06em;
+}
+
+.modal__subtitle {
+  margin: 0;
+  margin-bottom: 40px;
+  font-family: "Georgia", serif;
+  font-size: 15px;
+  line-height: 17px;
+  letter-spacing: 0.06em;
+}
+
+.modal__text {
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+.modal__list {
+  margin: 0;
+}
+
+.modal__parameter {
+  display: flex;
+  margin-bottom: 10px;
+}
+.modal__parameter:last-child {
+  margin-bottom: 0;
+}
+
+.modal__term {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+.modal__term::before {
+  width: 4px;
+  height: 4px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  content: "";
+}
+
+.modal__definition {
+  margin: 0;
 }
 
 .footer {
@@ -1352,6 +1520,7 @@ button {
   font-size: 20px;
   line-height: 23px;
   letter-spacing: 0.06em;
+  transition: opacity 200ms ease 0s;
 }
 .footer__link svg {
   flex-shrink: 0;
@@ -1361,6 +1530,9 @@ button {
   .footer__link--pin {
     align-self: start;
   }
+}
+.footer__link:hover, .footer__link:focus {
+  opacity: 0.7;
 }
 
 @media (max-width: 768px) {

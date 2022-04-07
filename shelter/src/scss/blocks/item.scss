@@ -1,17 +1,24 @@
 .item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 270px;
-  min-height: 435px;
-  padding-bottom: 30px;
   background-color: var(--color-light-s);
   transition: box-shadow 200ms ease 0s;
 
   &:hover,
   &:focus-within {
     box-shadow: 0 2px 35px 14px rgb(13 13 13 / 4%);
+
+    .button {
+      background-color: var(--color-primary);
+    }
   }
+}
+
+.item__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 270px;
+  min-height: 435px;
+  padding-bottom: 30px;
 }
 
 .item__name {
