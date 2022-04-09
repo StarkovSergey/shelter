@@ -2,6 +2,7 @@ import gulp from 'gulp';
 import { path } from './gulp/config/path.js'; // импорт путей
 import { plugins } from './gulp/config/plugins.js';
 
+
 // импорт задач
 import { copy } from './gulp/tasks/copy.js';
 import { reset } from './gulp/tasks/reset.js';

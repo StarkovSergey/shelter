@@ -4,7 +4,12 @@ import rename from 'gulp-rename';
 
 import cleanCss from 'gulp-clean-css'; // сжатие css-файлов
 import webpcss from 'gulp-webpcss'; // вывод webp изображений
-import autoprefixer from 'gulp-autoprefixer';
+// import autoprefixer from 'gulp-autoprefixer';
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
+import minmax from 'postcss-media-minmax';
+
+
 
 const sass = gulpSass(dartSass);
 
@@ -19,10 +24,14 @@ export const scss = () => app.gulp.src(app.path.src.scss, { sourcemaps: true }) 
   .pipe(sass({
     outputStyle: 'expanded',
   }))
-  .pipe(autoprefixer({
-    grid: true,
-    cascade: true,
-  }))
+  .pipe(postcss([
+    autoprefixer(),
+    minmax(),
+  ]))
+  // .pipe(autoprefixer({
+  //   grid: true,
+  //   cascade: true,
+  // }))
   .pipe(app.gulp.dest(app.path.build.css)) // для копирования неминифицированной версии
   .pipe(cleanCss())
   .pipe(rename({
