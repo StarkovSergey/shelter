@@ -6,8 +6,22 @@
   right: 0;
   bottom: 0;
   left: 0;
-  display: none;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--color-dark-3xl-a60);
+  visibility: hidden;
+  transform: scale(1.15);
+  opacity: 0;
+  transition: transform 100ms, opacity 100ms, visibility 0ms 100ms;
+
+  &--open {
+    visibility: visible;
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 300ms, opacity 300ms;
+  }
 }
 
 .modal__box {
@@ -34,32 +48,67 @@
   &:focus {
     background-color: var(--color-primary);
   }
+
+  @media (max-width: variables.$tablet-width) {
+    right: -30px;
+  }
 }
 
 .modal__content {
   display: flex;
   width: 900px;
-  min-height: 500px;
   margin: 0 auto;
-  margin-top: 188px;
   border-radius: 9px;
   overflow: hidden;
   background-color: var(--color-light-s);
+
+  @media (max-width: variables.$laptop-width) {
+    width: 630px;
+  }
+
+  @media (max-width: variables.$tablet-width) {
+    width: 240px;
+    padding: 10px;
+  }
 }
 
 .modal__image {
   flex-shrink: 0;
+  width: 500px;
+  height: 500px;
+
+  @media (max-width: variables.$laptop-width) {
+    width: 350px;
+    height: 350px;
+  }
+
+  @media (max-width: variables.$tablet-width) {
+    display: none;
+  }
 }
 
 .modal__text-column {
   max-width: 350px;
   margin-left: 30px;
   padding-top: 50px;
+  padding-bottom: 50px;
   font-family: "Georgia", serif;
   font-style: normal;
   font-size: 15px;
   line-height: 17px;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
+
+  @media (max-width: variables.$laptop-width) {
+    max-width: 260px;
+    margin-left: 11px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  @media (max-width: variables.$tablet-width) {
+    margin-left: 0;
+    padding: 10px;
+  }
 }
 
 .modal__title {
@@ -70,20 +119,38 @@
   font-size: 35px;
   line-height: 45px;
   letter-spacing: 0.06em;
+
+  @media (max-width: variables.$tablet-width) {
+    text-align: center;
+  }
 }
 
 .modal__subtitle {
   margin: 0;
   margin-bottom: 40px;
   font-family: "Georgia", serif;
-  font-size: 15px;
-  line-height: 17px;
+  font-size: 20px;
+  line-height: 23px;
   letter-spacing: 0.06em;
+
+  @media (max-width: variables.$laptop-width) {
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: variables.$tablet-width) {
+    text-align: center;
+  }
 }
 
 .modal__text {
   margin: 0;
   margin-bottom: 40px;
+
+  @media (max-width: variables.$laptop-width) {
+    margin-bottom: 20px;
+    font-size: 13px;
+    line-height: 14px;
+  }
 }
 
 .modal__list {
@@ -92,6 +159,7 @@
 
 .modal__parameter {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 10px;
 
   &:last-child {

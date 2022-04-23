@@ -3,7 +3,6 @@ const navigationElement = document.querySelector('.navigation');
 const navigationList = document.querySelector('.navigation__list');
 
 toggleButton.addEventListener('click', () => {
-  console.log(22222222);
   navigationElement.classList.toggle('navigation--open');
 
   if (navigationElement.classList.contains('navigation--open')) {
