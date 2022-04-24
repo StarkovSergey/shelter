@@ -1,5 +1,6 @@
 import { pets } from '../data/pets.js';
 import { preventScroll } from './util.js';
+import { closeMenuEsc } from './util.js';
 
 const createModalTemplate = ({
   name, img, type, breed, description, age, inoculations, diseases, parasites,
@@ -52,12 +53,12 @@ export const renderModalElement = (name) => {
   });
 
   modal.addEventListener('click', (evt) => {
-    if (evt.target.closest('.modal__box')) {
-      return;
+    if (!evt.target.closest('.modal__box')) {
+      modal.remove();
+      document.removeEventListener('wheel', preventScroll);
     }
-    modal.remove();
-    document.removeEventListener('wheel', preventScroll);
   });
 
   document.addEventListener('wheel', preventScroll, { passive: false });
+  document.addEventListener('keydown', closeMenuEsc);
 };

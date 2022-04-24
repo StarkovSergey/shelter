@@ -1051,13 +1051,82 @@ button {
   position: relative;
 }
 
+.slider__wrapper {
+  width: 990px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+@media (max-width: 1279px) {
+  .slider__wrapper {
+    width: 580px;
+  }
+}
+@media (max-width: 767px) {
+  .slider__wrapper {
+    width: 270px;
+  }
+}
+
+.slider__carousel {
+  position: relative;
+  left: calc(-100% - 40px);
+  display: flex;
+  gap: 40px;
+}
+
+@-webkit-keyframes move-right {
+  from {
+    left: calc(-100% - 40px);
+  }
+  to {
+    left: calc(-200% - 80px);
+  }
+}
+
+@keyframes move-right {
+  from {
+    left: calc(-100% - 40px);
+  }
+  to {
+    left: calc(-200% - 80px);
+  }
+}
+@-webkit-keyframes move-left {
+  from {
+    left: calc(-100% - 40px);
+  }
+  to {
+    left: 0%;
+  }
+}
+@keyframes move-left {
+  from {
+    left: calc(-100% - 40px);
+  }
+  to {
+    left: 0%;
+  }
+}
+.transition-right {
+  -webkit-animation-name: move-right;
+          animation-name: move-right;
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+}
+
+.transition-left {
+  -webkit-animation-name: move-left;
+          animation-name: move-left;
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+}
+
 .slider__list {
   position: relative;
   z-index: 1;
   display: flex;
   justify-content: center;
   gap: 90px;
-  max-width: 580px;
   margin: 0 auto;
   padding: 0;
   list-style: none;
