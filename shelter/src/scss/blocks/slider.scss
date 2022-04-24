@@ -61,7 +61,6 @@
   display: flex;
   justify-content: center;
   gap: 90px;
-  // max-width: 580px;
   margin: 0 auto;
   padding: 0;
   list-style: none;
@@ -75,7 +74,7 @@
   }
 }
 
-.slider__item {
+.slider .item {
   @media (max-width: variables.$laptop-width) {
     &:nth-child(3) {
       display: none;

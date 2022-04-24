@@ -1143,12 +1143,12 @@ button {
 }
 
 @media (max-width: 1279px) {
-  .slider__item:nth-child(3) {
+  .slider .item:nth-child(3) {
     display: none;
   }
 }
 @media (max-width: 767px) {
-  .slider__item:nth-child(2) {
+  .slider .item:nth-child(2) {
     display: none;
   }
 }

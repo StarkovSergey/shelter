@@ -27,10 +27,10 @@ const moveRight = () => {
   BUTTON_RIGHT.removeEventListener('click', moveRight);
 };
 
-BUTTON_LEFT.addEventListener('click', moveLeft);
-BUTTON_RIGHT.addEventListener('click', moveRight);
+BUTTON_LEFT?.addEventListener('click', moveLeft);
+BUTTON_RIGHT?.addEventListener('click', moveRight);
 
-const createItemTemplate = ({ name, img }) => `<li class="slider__item item" data-name=${name}>
+const createItemTemplate = ({ name, img }) => `<li class="item" data-name=${name}>
   <a class="item__link">
     <h3 class="item__name section__main-text">${name}</h3>
     <div class="item__image">
@@ -43,7 +43,7 @@ const createItemTemplate = ({ name, img }) => `<li class="slider__item item" dat
   </a>
 </li>`;
 
-const renderItemElement = (pet, parent) => {
+export const renderItemElement = (pet, parent) => {
   const itemElement = document.createElement('li');
   parent.append(itemElement);
   itemElement.outerHTML = createItemTemplate(pet);
@@ -66,7 +66,7 @@ const renderSidesItems = () => {
   LIST_RIGHT.innerHTML = LIST_LEFT.innerHTML;
 };
 
-CAROUSEL.addEventListener('animationend', (animationEvent) => {
+CAROUSEL?.addEventListener('animationend', (animationEvent) => {
   if (animationEvent.animationName === 'move-left') {
     CAROUSEL.classList.remove('transition-left');
     LIST_ACTIVE.innerHTML = LIST_LEFT.innerHTML;
@@ -83,5 +83,7 @@ CAROUSEL.addEventListener('animationend', (animationEvent) => {
   BUTTON_RIGHT.addEventListener('click', moveRight);
 });
 
-renderThreeItems(LIST_ACTIVE);
-renderSidesItems();
+if (document.querySelector('.slider')) {
+  renderThreeItems(LIST_ACTIVE);
+  renderSidesItems();
+}
