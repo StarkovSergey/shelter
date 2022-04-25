@@ -3,10 +3,11 @@
 .item {
   border-radius: 9px;
   background-color: var(--color-light-s);
-  transition: box-shadow 200ms ease 0s;
+  transition: box-shadow 200ms ease 0s, background-color 300ms ease 0s;
 
   &:hover,
   &:focus-within {
+    background-color: var(--color-light-xl);
     box-shadow: 0 2px 35px 14px rgb(13 13 13 / 4%);
 
     .button {
@@ -39,4 +40,5 @@
   width: 270px;
   height: 270px;
   margin-bottom: 30px;
+  background-color: var(--color-light-s);
 }

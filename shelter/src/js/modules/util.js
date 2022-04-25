@@ -10,3 +10,12 @@ export const closeMenuEsc = (evt) => {
     document.removeEventListener('wheel', preventScroll);
   }
 };
+
+export const checkLessValueInObject = (keyParameter, object) => {
+  for (const key in object) {
+    if (object[key] < object[keyParameter]) {
+      return true;
+    }
+  }
+  return false;
+};

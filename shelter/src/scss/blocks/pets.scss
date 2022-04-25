@@ -3,6 +3,10 @@
 .pets {
   margin-top: 120px;
 
+  .container {
+    padding: 0;
+  }
+
   @media (max-width: variables.$laptop-width) {
     padding-bottom: 75px;
   }

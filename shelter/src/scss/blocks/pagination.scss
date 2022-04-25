@@ -20,6 +20,7 @@
   height: 52px;
   border: 2px solid var(--color-primary);
   border-radius: 50%;
+  transition: background-color 200ms ease 0s;
 
   &:disabled {
     border-color: var(--color-dark-s);

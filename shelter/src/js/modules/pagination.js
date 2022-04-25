@@ -1,10 +1,8 @@
 import { pets } from '../data/pets.js';
 import { renderModalElement } from './modal.js';
-import { makeRandomInteger } from './util.js';
+import { makeRandomInteger, checkLessValueInObject } from './util.js';
 import { renderItemElement } from './slider.js';
 
-const PAGES_COUNT = 6;
-const PETS_PER_PAGE = 8;
 const PAGE_NUMBER_ELEMENT = document.querySelector('.pagination__element--page');
 const PAGINATION_LIST = document.querySelector('.pets__list');
 const BUTTON_NEXT = document.querySelector('.pagination__element--next');
@@ -13,21 +11,65 @@ const BUTTON_FIRST_PAGE = document.querySelector('.pagination__element--first');
 const BUTTON_LAST_PAGE = document.querySelector('.pagination__element--last');
 
 const pagination = {
-  petsIndexes: [], // [[2, 4, 1, 4], [3, 4, 5, 2,], ...]
-  generatePetsIndexes() {
-    const generatedIndexes = [];
-    for (let i = 0; i < PAGES_COUNT; i++) {
-      const indexBox = [];
-      for (let j = 0; j < PETS_PER_PAGE; j++) {
-        let index = makeRandomInteger(0, 7);
-        while (indexBox.includes(index)) {
-          index = makeRandomInteger(0, 7);
-        }
-        indexBox.push(index);
-      }
-      generatedIndexes.push(indexBox);
+  petsIndexes: [], // [[2, 4, 1, 4, 3, 5, 6, 7, 0], [1, 6, 0, 7, 3, 4, 5, 2,], ...]
+  pagesCount: 6,
+  petsPerPage: 8,
+  writeCounts() {
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      this.pagesCount = 18;
+      this.petsPerPage = 3;
+    } else if (window.matchMedia('(max-width: 1279px)').matches) {
+      this.pagesCount = 8;
+      this.petsPerPage = 6;
+    } else {
+      this.pagesCount = 6;
+      this.petsPerPage = 8;
     }
-    this.petsIndexes = generatedIndexes;
+  },
+  generatePetsIndexes() {
+    if (this.pagesCount === 18) {
+      const generatedIndexes = [];
+
+      for (let i = 0; i < this.pagesCount; i++) { // 8
+        const indexBox = [];
+        for (let j = 0; j < this.petsPerPage; j++) { // 6
+          let index = makeRandomInteger(0, 7);
+          while (indexBox.includes(index)) {
+            index = makeRandomInteger(0, 7);
+          }
+          indexBox.push(index);
+        }
+        generatedIndexes.push(indexBox);
+      }
+      this.petsIndexes = generatedIndexes;
+    } else {
+      let generatedIndexes = new Array(this.pagesCount);
+      generatedIndexes = generatedIndexes.fill(null).map(() => []);
+
+      let counter = new Array(this.pagesCount);
+      counter = counter.fill(null).map(() => 0);
+      counter = { ...counter };
+
+      for (let i = 0; i < pets.length; i++) {
+        for (let j = 0; j < 6; j++) {
+          let pageIndex = makeRandomInteger(0, this.pagesCount - 1);
+          while (generatedIndexes[pageIndex].includes(i)
+          || generatedIndexes[pageIndex].length > this.petsPerPage
+          || checkLessValueInObject(pageIndex, counter)) {
+            pageIndex = makeRandomInteger(0, this.pagesCount - 1);
+          }
+          counter[pageIndex] += 1;
+
+          let cartIndex = makeRandomInteger(0, this.petsPerPage - 1);
+          while (generatedIndexes[pageIndex][cartIndex] || generatedIndexes[pageIndex][cartIndex] === 0) {
+            cartIndex = makeRandomInteger(0, this.petsPerPage - 1);
+          }
+
+          generatedIndexes[pageIndex][cartIndex] = i;
+        }
+      }
+      this.petsIndexes = generatedIndexes;
+    }
   },
   currentPage: 0,
   renderPageNumber() {
@@ -35,7 +77,7 @@ const pagination = {
   },
   renderPaginationList() {
     PAGINATION_LIST.innerHTML = '';
-    for (let i = 0; i < PETS_PER_PAGE; i++) {
+    for (let i = 0; i < this.petsPerPage; i++) {
       const index = this.petsIndexes[this.currentPage][i];
       renderItemElement(pets[index], PAGINATION_LIST);
     }
@@ -49,7 +91,7 @@ const pagination = {
       BUTTON_PREV.disabled = false;
     }
 
-    if (this.currentPage === PAGES_COUNT - 1) {
+    if (this.currentPage === this.pagesCount - 1) {
       BUTTON_LAST_PAGE.disabled = true;
       BUTTON_NEXT.disabled = true;
     } else {
@@ -62,7 +104,8 @@ const pagination = {
     this.renderPaginationList();
     this.renderButtons();
   },
-  renderPagination() {
+  renderInitial() {
+    this.writeCounts();
     this.generatePetsIndexes();
     this.renderPage();
     this.buttonNextHandler = this.buttonNextHandler.bind(this);
@@ -93,11 +136,11 @@ const pagination = {
     this.renderPage();
   },
   buttonLastHandler() {
-    this.currentPage = PAGES_COUNT - 1;
+    this.currentPage = this.pagesCount - 1;
     this.renderPage();
   },
 };
 
 if (document.querySelector('.pagination')) {
-  pagination.renderPagination();
+  pagination.renderInitial();
 }

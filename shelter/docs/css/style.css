@@ -755,7 +755,7 @@ button {
     align-items: center;
     visibility: hidden;
     transform: translateX(100%);
-    transition: transform 0.2s ease, visibility 0ms 200ms;
+    transition: transform 0.3s ease, visibility 0ms 200ms;
   }
 }
 
@@ -768,7 +768,7 @@ button {
     background-color: var(--color-dark-3xl);
     visibility: visible;
     transform: translateX(0%);
-    transition: transform 0.2s ease, visibility 0ms 0ms;
+    transition: transform 0.3s ease, visibility 0ms 0ms;
   }
   .navigation--open .navigation__list::before {
     position: absolute;
@@ -1110,15 +1110,15 @@ button {
 .transition-right {
   -webkit-animation-name: move-right;
           animation-name: move-right;
-  -webkit-animation-duration: 1000ms;
-          animation-duration: 1000ms;
+  -webkit-animation-duration: 700ms;
+          animation-duration: 700ms;
 }
 
 .transition-left {
   -webkit-animation-name: move-left;
           animation-name: move-left;
-  -webkit-animation-duration: 1000ms;
-          animation-duration: 1000ms;
+  -webkit-animation-duration: 700ms;
+          animation-duration: 700ms;
 }
 
 .slider__list {
@@ -1191,9 +1191,10 @@ button {
 .item {
   border-radius: 9px;
   background-color: var(--color-light-s);
-  transition: box-shadow 200ms ease 0s;
+  transition: box-shadow 200ms ease 0s, background-color 300ms ease 0s;
 }
 .item:hover, .item:focus-within {
+  background-color: var(--color-light-xl);
   box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 .item:hover .button, .item:focus-within .button {
@@ -1224,6 +1225,7 @@ button {
   width: 270px;
   height: 270px;
   margin-bottom: 30px;
+  background-color: var(--color-light-s);
 }
 
 .help__title {
@@ -1292,6 +1294,9 @@ button {
 
 .pets {
   margin-top: 120px;
+}
+.pets .container {
+  padding: 0;
 }
 @media (max-width: 1279px) {
   .pets {
@@ -1380,6 +1385,7 @@ button {
   height: 52px;
   border: 2px solid var(--color-primary);
   border-radius: 50%;
+  transition: background-color 200ms ease 0s;
 }
 .pagination__element:disabled {
   border-color: var(--color-dark-s);
@@ -1426,6 +1432,7 @@ button {
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
+  border-radius: 13px 0 0 9px;
 }
 
 .modal__close-button {
@@ -1501,7 +1508,7 @@ button {
 }
 @media (max-width: 1279px) {
   .modal__text-column {
-    max-width: 260px;
+    max-width: 261px;
     margin-left: 11px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -1554,7 +1561,7 @@ button {
 }
 @media (max-width: 1279px) {
   .modal__text {
-    margin-bottom: 20px;
+    margin-bottom: 19px;
     font-size: 13px;
     line-height: 14px;
   }
@@ -1565,7 +1572,6 @@ button {
 }
 
 .modal__parameter {
-  display: flex;
   flex-wrap: wrap;
   margin-bottom: 10px;
 }
@@ -1574,11 +1580,15 @@ button {
 }
 
 .modal__term {
-  display: flex;
-  align-items: center;
+  display: inline-flex;
   font-weight: 700;
+  position: relative;
+  padding-left: 14px;
 }
 .modal__term::before {
+  position: absolute;
+  top: 5px;
+  left: 0;
   width: 4px;
   height: 4px;
   margin-right: 10px;
@@ -1588,6 +1598,7 @@ button {
 }
 
 .modal__definition {
+  display: inline;
   margin: 0;
 }
 
