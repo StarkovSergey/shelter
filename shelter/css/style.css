@@ -1442,6 +1442,7 @@ button {
   align-items: center;
   background-color: var(--color-dark-3xl-a60);
   visibility: hidden;
+  cursor: pointer;
   transform: scale(1.15);
   opacity: 0;
   transition: transform 100ms, opacity 100ms, visibility 0ms 100ms;
@@ -1481,8 +1482,10 @@ button {
   width: fit-content;
   margin: 0 auto;
   border-radius: 13px 0 0 9px;
+  cursor: auto;
 }
 
+/* close-button */
 .modal__close-button {
   position: absolute;
   top: -52px;
@@ -1498,12 +1501,20 @@ button {
   transition: background-color 200ms ease 0s;
 }
 .modal__close-button:hover, .modal__close-button:focus {
-  background-color: var(--color-primary);
+  background-color: var(--color-primary) !important;
 }
 @media (max-width: 767px) {
   .modal__close-button {
     right: -30px;
   }
+}
+
+.modal:hover .modal__close-button {
+  background-color: var(--color-primary);
+}
+
+.modal__box:hover .modal__close-button {
+  background-color: transparent;
 }
 
 .modal__content {
