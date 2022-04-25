@@ -580,6 +580,7 @@ button {
 
 .header {
   position: absolute;
+  z-index: 1;
   width: 100%;
   padding-top: 60px;
   padding-bottom: 60px;
@@ -1141,6 +1142,9 @@ button {
     margin-bottom: 20px;
   }
 }
+.slider__list--left, .slider__list--right {
+  pointer-events: none;
+}
 
 @media (max-width: 1279px) {
   .slider .item:nth-child(3) {
@@ -1363,7 +1367,30 @@ button {
     display: none;
   }
 }
+.pets__list .item {
+  -webkit-animation-name: pagination-item;
+          animation-name: pagination-item;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+}
 
+@-webkit-keyframes pagination-item {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pagination-item {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .pagination {
   display: flex;
   gap: 20px;
@@ -1418,6 +1445,10 @@ button {
   transform: scale(1.15);
   opacity: 0;
   transition: transform 100ms, opacity 100ms, visibility 0ms 100ms;
+  -webkit-animation-name: modal;
+          animation-name: modal;
+  -webkit-animation-duration: 200ms;
+          animation-duration: 200ms;
 }
 .modal--open {
   visibility: visible;
@@ -1426,6 +1457,23 @@ button {
   transition: transform 300ms, opacity 300ms;
 }
 
+@-webkit-keyframes modal {
+  from {
+    transform: scale(130%);
+  }
+  to {
+    transform: scale(100%);
+  }
+}
+
+@keyframes modal {
+  from {
+    transform: scale(130%);
+  }
+  to {
+    transform: scale(100%);
+  }
+}
 .modal__box {
   position: relative;
   width: -webkit-fit-content;
@@ -1580,10 +1628,10 @@ button {
 }
 
 .modal__term {
-  display: inline-flex;
-  font-weight: 700;
   position: relative;
+  display: inline-flex;
   padding-left: 14px;
+  font-weight: 700;
 }
 .modal__term::before {
   position: absolute;
