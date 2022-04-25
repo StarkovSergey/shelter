@@ -49,96 +49,22 @@
   </div>
 </header>
 
-    <main class="section section--dark pets">
+    <main class="section section--dark pets main">
       <div class="container">
         <h1 class="section__title section__title--center pets__title">
           Our friends who<br />
           are looking for a house
         </h1>
         <ul class="pets__list">
-          <li class="item">
-            <a class="item__link">
-              <h3 class="item__name section__main-text">Katrine</h3>
-              <div class="item__image">
-                <img src="img/sections/friends/pets-katrine.png" alt="gray cat" />
-              </div>
-              <button class="button button--border">Learn more</button>
-            </a>
-          </li>
-          <li class="item">
-            <a class="item__link">
-            <h3 class="item__name section__main-text">Jennifer</h3>
-            <div class="item__image">
-              <img src="img/sections/friends/pets-jennifer.png" alt="dog" />
-            </div>
-            <button class="button button--border">Learn more</button>
-            </a>
-          </li>
-          <li class="item">
-            <a class="item__link">
-            <h3 class="item__name section__main-text">Woody</h3>
-            <div class="item__image">
-              <img src="img/sections/friends/pets-woody.png" alt="dog" />
-            </div>
-            <button class="button button--border">Learn more</button>
-            </a>
-          </li>
-          <li class="item">
-            <a class="item__link">
-            <h3 class="item__name section__main-text">Sophia</h3>
-            <div class="item__image">
-              <img src="img/sections/friends/pets-sophia.jpg" alt="dog" />
-            </div>
-            <button class="button button--border">Learn more</button>
-            </a>
-          </li>
-          <li class="item">
-            <a class="item__link">
-            <h3 class="item__name section__main-text">Timmy</h3>
-            <div class="item__image">
-              <img src="img/sections/friends/pets-timmy.png" alt="cat" />
-            </div>
-            <button class="button button--border">Learn more</button>
-            </a>
-          </li>
-          <li class="item">
-            <a class="item__link">
-            <h3 class="item__name section__main-text">Charly</h3>
-            <div class="item__image">
-              <img src="img/sections/friends/pets-charly.jpg" alt="dog" />
-            </div>
-            <button class="button button--border">Learn more</button>
-            </a>
-          </li>
-          <li class="item">
-            <a class="item__link">
-            <h3 class="item__name section__main-text">Scarlett</h3>
-            <div class="item__image">
-              <img src="img/sections/friends/pets-scarlet.png" alt="dog" />
-            </div>
-            <button class="button button--border">Learn more</button>
-            </a>
-          </li>
-          <li class="item">
-            <a class="item__link">
-            <h3 class="item__name section__main-text">Freddie</h3>
-            <div class="item__image">
-              <img src="img/sections/friends/pets-freddie.png" alt="cat" />
-            </div>
-            <button class="button button--border">Learn more</button>
-            </a>
-          </li>
         </ul>
         <div class="pagination  section__main-text">
           <button
             class="pagination__element pagination__element--first"
-            disabled
           >
             <<
           </button>
           <button
             class="pagination__element pagination__element--prev"
-            disabled
           >
             <
           </button>
@@ -209,6 +135,40 @@
     </div>
   </div>
 </footer>
+
+    <section class="modal">
+  <div class="modal__box">
+    <button class="modal__close-button">
+      <span class="visually-hidden">close modal button</span>
+    </button>
+    <div class="modal__content">
+      <div class="modal__image">
+        <img src="img/sections/modal/pets-jennifer.jpg" width="500" height="500" alt="photo of pet">
+      </div>
+      <div class="modal__text-column">
+        <h2 class="modal__title">Jennifer</h2>
+        <p class="modal__subtitle">Dog - Labrador</p>
+        <p class="modal__text">
+          Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.
+        </p>
+        <dl class="modal__list">
+          <div class="modal__parameter">
+            <dt class="modal__term">Age:&nbsp;</dt><dd class="modal__definition">2 months</dd>
+          </div>
+          <div class="modal__parameter">
+            <dt class="modal__term">Inoculations:&nbsp;</dt><dd class="modal__definition">none</dd>
+          </div>
+          <div class="modal__parameter">
+            <dt class="modal__term">Diseases:&nbsp;</dt><dd class="modal__definition">none</dd>
+          </div>
+          <div class="modal__parameter">
+            <dt class="modal__term">Parasites:&nbsp;</dt><dd class="modal__definition">none</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div class="modal__box">
+</section>
 
     <script src="js/app.min.js" type="module"></script>
   </body>
