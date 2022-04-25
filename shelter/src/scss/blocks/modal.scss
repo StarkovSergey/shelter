@@ -12,9 +12,12 @@
   align-items: center;
   background-color: var(--color-dark-3xl-a60);
   visibility: hidden;
+  cursor: pointer;
   transform: scale(1.15);
   opacity: 0;
   transition: transform 100ms, opacity 100ms, visibility 0ms 100ms;
+  animation-name: modal;
+  animation-duration: 200ms;
 
   &--open {
     visibility: visible;
@@ -22,8 +25,6 @@
     opacity: 1;
     transition: transform 300ms, opacity 300ms;
   }
-  animation-name: modal;
-  animation-duration: 200ms;
 }
 
 @keyframes modal {
@@ -41,7 +42,10 @@
   width: fit-content;
   margin: 0 auto;
   border-radius: 13px 0 0 9px;
+  cursor: auto;
 }
+
+/* close-button */
 
 .modal__close-button {
   position: absolute;
@@ -65,6 +69,10 @@
   @media (max-width: variables.$tablet-width) {
     right: -30px;
   }
+}
+
+.modal__box:hover .modal__close-button {
+  background-color: transparent;
 }
 
 .modal__content {
