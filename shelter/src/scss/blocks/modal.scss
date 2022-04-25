@@ -22,6 +22,18 @@
     opacity: 1;
     transition: transform 300ms, opacity 300ms;
   }
+  animation-name: modal;
+  animation-duration: 200ms;
+}
+
+@keyframes modal {
+  from {
+    transform: scale(130%);
+  }
+
+  to {
+    transform: scale(100%);
+  }
 }
 
 .modal__box {
@@ -169,12 +181,13 @@
 }
 
 .modal__term {
+  position: relative;
+
   // display: flex;
   // display: inline-flex;
   display: inline-flex;
-  font-weight: 700;
-  position: relative;
   padding-left: 14px;
+  font-weight: 700;
 
   &::before {
     position: absolute;
@@ -191,6 +204,5 @@
 
 .modal__definition {
   display: inline;
-
   margin: 0;
 }

@@ -113,7 +113,9 @@ const pagination = {
     this.buttonFirstHandler = this.buttonFirstHandler.bind(this);
     this.buttonLastHandler = this.buttonLastHandler.bind(this);
     BUTTON_NEXT.addEventListener('click', this.buttonNextHandler);
+    document.addEventListener('keydown', this.buttonNextHandler);
     BUTTON_PREV.addEventListener('click', this.buttonPrevHandler);
+    document.addEventListener('keydown', this.buttonPrevHandler);
     BUTTON_FIRST_PAGE.addEventListener('click', this.buttonFirstHandler);
     BUTTON_LAST_PAGE.addEventListener('click', this.buttonLastHandler);
 
@@ -123,11 +125,19 @@ const pagination = {
       }
     });
   },
-  buttonNextHandler() {
+  buttonNextHandler(evt) {
+    if ((evt.key && evt.key !== 'ArrowRight') || this.currentPage >= this.pagesCount - 1) {
+      return;
+    }
+
     this.currentPage += 1;
     this.renderPage();
   },
-  buttonPrevHandler() {
+  buttonPrevHandler(evt) {
+    if ((evt.key && evt.key !== 'ArrowLeft') || this.currentPage <= 0) {
+      return;
+    }
+
     this.currentPage -= 1;
     this.renderPage();
   },

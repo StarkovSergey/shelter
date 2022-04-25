@@ -99,11 +99,11 @@
           <div class="friends__slider slider">
             <div class="slider__wrapper">
               <div class="slider__carousel">
-                <ul class="slider__list slider__list--left">
+                <ul class="slider__list slider__list--left" aria-hidden="true">
                 </ul>
                 <ul class="slider__list slider__list--active">
                 </ul>
-                <ul class="slider__list slider__list--right">
+                <ul class="slider__list slider__list--right" aria-hidden="true">
                 </ul>
               </div>
             </div>
@@ -232,7 +232,6 @@
       </section>
     </main>
     @@include('html/footer.html', {})
-    @@include('html/modal.html', {})
 
     <script src="js/app.min.js" type="module"></script>
   </body>

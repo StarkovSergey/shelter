@@ -64,6 +64,11 @@ const renderThreeItems = (parent) => {
 const renderSidesItems = () => {
   renderThreeItems(LIST_LEFT);
   LIST_RIGHT.innerHTML = LIST_LEFT.innerHTML;
+
+  // turn off tabIndex for accessibility
+  document.querySelectorAll('.slider__list:not(.slider__list--active) button').forEach((itemElement) => {
+    itemElement.setAttribute('tabindex', '-1');
+  });
 };
 
 CAROUSEL?.addEventListener('animationend', (animationEvent) => {

@@ -65,4 +65,19 @@
       display: none;
     }
   }
+
+  .item {
+    animation-name: pagination-item;
+    animation-duration: 400ms;
+  }
+}
+
+@keyframes pagination-item {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

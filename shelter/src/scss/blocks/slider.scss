@@ -72,6 +72,11 @@
   @media (max-width: variables.$tablet-width) {
     margin-bottom: 20px;
   }
+
+  &--left,
+  &--right {
+    pointer-events: none;
+  }
 }
 
 .slider .item {

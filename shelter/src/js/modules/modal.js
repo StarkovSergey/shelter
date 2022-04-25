@@ -1,6 +1,5 @@
 import { pets } from '../data/pets.js';
-import { preventScroll } from './util.js';
-import { closeMenuEsc } from './util.js';
+import { preventScroll, closeMenuEsc } from './util.js';
 
 const createModalTemplate = ({
   name, img, type, breed, description, age, inoculations, diseases, parasites,
@@ -39,6 +38,10 @@ const createModalTemplate = ({
 `;
 
 export const renderModalElement = (name) => {
+  if (document.querySelector('.modal')) {
+    return;
+  }
+
   const item = pets.find((pet) => pet.name === name);
   const modalElement = document.createElement('section');
   document.querySelector('.main').append(modalElement);
