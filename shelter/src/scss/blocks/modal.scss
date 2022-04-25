@@ -63,12 +63,16 @@
 
   &:hover,
   &:focus {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary) !important;
   }
 
   @media (max-width: variables.$tablet-width) {
     right: -30px;
   }
+}
+
+.modal:hover .modal__close-button {
+  background-color: var(--color-primary);
 }
 
 .modal__box:hover .modal__close-button {

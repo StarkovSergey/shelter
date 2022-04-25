@@ -22,13 +22,13 @@ const createModalTemplate = ({
             <dt class="modal__term">Age:&nbsp;</dt><dd class="modal__definition">${age}</dd>
           </div>
           <div class="modal__parameter">
-            <dt class="modal__term">Inoculations:&nbsp;</dt><dd class="modal__definition">${inoculations}</dd>
+            <dt class="modal__term">Inoculations:&nbsp;</dt><dd class="modal__definition">${inoculations.join(', ')}</dd>
           </div>
           <div class="modal__parameter">
-            <dt class="modal__term">Diseases:&nbsp;</dt><dd class="modal__definition">${diseases}</dd>
+            <dt class="modal__term">Diseases:&nbsp;</dt><dd class="modal__definition">${diseases.join(', ')}</dd>
           </div>
           <div class="modal__parameter">
-            <dt class="modal__term">Parasites:&nbsp;</dt><dd class="modal__definition">${parasites}</dd>
+            <dt class="modal__term">Parasites:&nbsp;</dt><dd class="modal__definition">${parasites.join(', ')}</dd>
           </div>
         </dl>
       </div>

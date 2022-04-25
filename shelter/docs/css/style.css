@@ -1501,12 +1501,16 @@ button {
   transition: background-color 200ms ease 0s;
 }
 .modal__close-button:hover, .modal__close-button:focus {
-  background-color: var(--color-primary);
+  background-color: var(--color-primary) !important;
 }
 @media (max-width: 767px) {
   .modal__close-button {
     right: -30px;
   }
+}
+
+.modal:hover .modal__close-button {
+  background-color: var(--color-primary);
 }
 
 .modal__box:hover .modal__close-button {
